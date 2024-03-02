@@ -1,0 +1,31 @@
+.see-more {
+    // position: relative;
+    // padding-left: 60px;
+    display: flex;
+    
+    align-items: center;
+    gap: 22px;
+    
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+
+    // transform: translate(-41%, -62px) rotate(-90deg);    // opacity: 0.6;
+    transform: rotate(-90deg) translate(0, 120%);    
+    transform-origin: left bottom;
+
+    &::before {
+        // вариант через position: absolute;
+        // position: absolute;
+        // left: 0;
+        // top: calc(50% - 1.5px);
+
+        content: '';
+        width: 38px;
+        height: 3px;
+        background-color: var(--text-color);
+        opacity: 0.3;
+
+    }
+}

@@ -1,0 +1,204 @@
+// Выносим градиенты в переменные
+:root {
+    --radial-bg: radial-gradient(
+        50% 50% at 50% 50%, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.2) 100%);
+
+    --liner-bg: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(255, 255, 255, 0) 99.99%,
+        rgba(255, 255, 255, 0) 100%);
+
+}
+
+@mixin background-clip {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.slide {
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    // background-color: #555;
+    // background-color: #c4c4c4;
+	// background-image: url('./../img/header/bg-1.jpg');
+
+    background: {
+        color:#c4c4c4;
+        position: center center; // x * y
+    //     image: url('./../img/header/bg-1.jpg');
+        size: cover;
+        repeat: no-repeat;
+    }
+
+    // background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0) 99.99%, rgba(255, 255, 255, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+
+    // background: 
+    //     var(--radial-bg),
+    //     var(--liner-bg),
+    //     url('./../img/header/bg-1.jpg'), lightgray 50% / cover no-repeat ;
+
+    &--norway {
+        background:
+            var(--radial-bg),
+            var(--liner-bg),
+            url('./../img/header/bg-1.jpg') lightgray 50% / cover no-repeat;
+    
+    }
+
+    &--austria {
+        background:
+            var(--radial-bg),
+            var(--liner-bg),
+            url('./../img/header/bg-02.jpg') lightgray 50% / cover no-repeat ;
+    }
+
+    &--uae {
+        background:
+            var(--radial-bg),
+            var(--liner-bg),
+            url('./../img/header/bg-03.jpg') lightgray 50% / cover no-repeat ;
+    }
+
+    &--thailand {
+        background:
+            var(--radial-bg),
+            var(--liner-bg),
+            url('./../img/header/bg-04.jpg') lightgray 50% / cover no-repeat ;
+    }
+
+    &--morocco {
+        background:
+            var(--radial-bg),
+            var(--liner-bg),
+            url('./../img/header/bg-05.jpg') lightgray 50% / cover no-repeat ;
+    }
+
+    &::before{
+        content: '';
+    }
+
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    @media (max-width: 1200px) {
+        padding-bottom: 60px;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+}
+
+.slide__header {
+    position: relative;
+    text-align: center;
+}
+
+.slide__tagline {
+    position: absolute;
+    top: -8px;
+    width: 100%;
+
+    font-weight: 500;
+    // font-size: 30px;
+    font-size: 1.56vw;
+    line-height: 1.23;
+    letter-spacing: 0.55em;
+    color: rgba(255, 255, 255, 0.7);
+
+    @media (max-width: 767px) {
+        font-size: 3vw;
+    }
+}
+
+@mixin background($color) {
+    background: linear-gradient(
+        47.06deg, 
+        $color -3.87%, 
+        rgba(255, 255, 255, 0) 20.89%),
+        #fff;
+}
+
+.slide__title {
+    display: inline-block;
+    padding: 0 10px;
+
+    // font-size: 250px;
+    // Чтобы фонт пропорционально изменялся, переводим в 'VW'
+    // при ширине viewport = 1920 px, шрифт - 250px
+    font-size: 13vw;
+    font-weight: 700;
+    line-height: 1.22;
+
+    @media (max-width: 767px) {
+        font-size: 19vw;
+    }
+
+    // 
+    // background: linear-gradient(
+    //     47.06deg, 
+    //     #000 -3.87%, 
+    //     rgba(255, 255, 255, 0) 20.89%),
+    //     #fff;
+
+    @include background(#000);
+
+    // Устанавливаем приоритет '!important', чтобы при объединении в конечном файле
+    // bg не переписывался.
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+
+    // Переобределям 'bg' для заголовка каждого слайда по цвет общего 'bg'
+    &--norway {
+        @include background(#051d27);
+    }
+
+    &--austria{
+        @include background(#122127);
+    }
+
+    &--uae {
+        @include background(#aa6621);
+    }
+
+    &--thailand {
+        @include background(#2e7c88);
+    }
+
+    &--morocco {
+        @include background(#757575);
+    }
+}
+
+.slide__locations {
+    display: flex;
+    column-gap: 30px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (max-width: 1023px) {
+        width: 90%;
+    }
+
+    @media (max-width: 767px) {
+        width: 90%;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}

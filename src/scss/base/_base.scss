@@ -1,0 +1,26 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Roboto:wght@900&display=swap');
+/*
+font-family: "Roboto", sans-serif;
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700);
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--page-bg);
+	color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+* {
+    // border: 1px solid lightgray; 
+}
