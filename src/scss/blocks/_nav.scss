@@ -33,7 +33,7 @@
 // Hover для ссылок
 .nav__list a {
     position: relative;
-
+ 
     &::before {
         content: '';
 
@@ -47,15 +47,9 @@
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
     }
-
+ 
     &:hover::before {
         transform-origin: left;
         transform: scale(1);
     }
-}
-
-.nav__mobile-nav {
-}
- 
-.nav-btn {
 }

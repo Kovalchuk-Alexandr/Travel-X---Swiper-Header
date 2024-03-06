@@ -30,6 +30,26 @@ const swiper = new Swiper(".swiper", {
         // el: ".swiper-pagination",
         el: ".slider-controls__count",
         type: "fraction",
+        // ставим "0" перед числами
+        formatFractionCurrent: function (number) {
+            // return number.padStart(2, "0");
+            return ("0" + number).slice(-2);
+        },
+        formatFractionTotal: function (number) {
+            // return number.padStart(2, "0");
+            return ("0" + number).slice(-2);
+        },
+        renderFraction: function (currentClass, totalClass) {
+            return (
+                '<span class="' +
+                currentClass +
+                '"></span>' +
+                " / " +
+                '<span class="' +
+                totalClass +
+                '"></span>'
+            );
+        },
     },
 
     // Navigation arrows

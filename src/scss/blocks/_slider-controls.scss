@@ -15,16 +15,17 @@
 .sliderNext {
 }
 
-.slider-controls__count {
+.slider-controls__count,
+.swiper-pagination-fraction {
     // padding-left: 16px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: end !important;
     column-gap: 6px;
 
     font-weight: 600;
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3) !important;
     // opacity: 0.3;
     line-height: 1;
     text-align: right;
@@ -34,7 +35,7 @@
 .swiper-pagination-current
 {
     font-size: 32px;
-    line-height: 0.75;
+    line-height: 0.85;
     color: var(--text-color);
     opacity: 1;
 }

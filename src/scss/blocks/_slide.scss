@@ -163,7 +163,7 @@
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
 
-    // Переобределям 'bg' для заголовка каждого слайда по цвет общего 'bg'
+    // Переопределям 'bg' для заголовка каждого слайда по цвет общего 'bg'
     &--norway {
         @include background(#051d27);
     }
